@@ -6,7 +6,13 @@
             <div class="col-12 col-md-4">
                 @foreach ($films as $film)
                     <div class="card" style="width: 18rem;">
-                        <img src="{{Storage::url($film->img)}}" class="card-img-top" alt="...">
+                        @if ($film->img)
+                            <img src="{{Storage::url($film->img)}}" class="card-img-top" alt="...">
+                        @else
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                        @endif
+                        
+
                         <div class="card-body">
                         <h3 class="card-title">Titolo: {{$film->title}}</h3>
                         {{-- <p class="card-title">Descrizione: {{$film->description}}</p> --}}
