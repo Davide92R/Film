@@ -17,7 +17,10 @@ use App\Http\Controllers\PublicController;
 
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
 
-Route::get('/film', [FilmController::class, 'createFilm'])->name('createfilm');
+Route::get('/film', [FilmController::class, 'createFilm'])->name('createFilm');
 Route::post('/film/store', [FilmController::class, 'storeFilm'])->name('storeFilm');
 
-Route::get('/formFilm', [FilmController::class, 'indexFilm'])->name('indexFilm');
+Route::get('/film/index', [FilmController::class, 'indexFilm'])->name('indexFilm');
+
+// Rotta parametrica per il film
+Route::get('/film/{film}', [FilmController::class,'detFilm'])->name('detFilm');
