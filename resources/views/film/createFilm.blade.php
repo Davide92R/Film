@@ -13,7 +13,7 @@
 
     <div class="container">
         <div class="row vh-100">
-            <form action="{{route('storeFilm')}}" method="POST">
+            <form action="{{route('storeFilm')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                   <label class="form-label">Titolo</label>
@@ -30,7 +30,10 @@
                 <div class="mb-3 d-flex justify-content-center">
                     <textarea name="description" id="" cols="300" rows="10">{{old('description')}}</textarea>
                 </div>
-                <input type="file" class="form-control mt-3 mb-3" id="customFile" />
+                <div class="mb-3">
+                    <label class="form-label">Inserisci la copertina</label>
+                    <input type="file" class="form-control mt-3 mb-3" id="customFile" name="img"/>
+                </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

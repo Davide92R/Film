@@ -26,8 +26,9 @@ class FilmRequest extends FormRequest
         return [
             'title'=> 'required',
             'author'=> 'required',
-            'year'=> 'required | integer',
+            'year'=> 'required | integer |min_digits:4',
             'description'=> 'required',
+            'img'=>'required| image'
         ];
     }
 
@@ -38,7 +39,9 @@ class FilmRequest extends FormRequest
             'author.required'=>"Il nome dell'autore è obligatorio",
             'year.required'=> "L'anno è obbligatorio",
             'year.integer'=>"Devi inserire solo numeri interi",
+            'year.min_digits'=>"L'anno è composto da 4 cifre, controlla!",
             'description.required'=>'La descrizione è obbligatoria',
+            'img.required'=>'Devi inserire anche la copertina del film!',
         ];
     }
 }

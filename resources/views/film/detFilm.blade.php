@@ -5,7 +5,7 @@
         <div class="row justify-content-around">
             <div class="col-12 col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{Storage::url($film->img)}}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h3 class="card-title">Titolo: {{$film->title}}</h3>
                         <h4 class="card-title">Autore: {{$film->author}}</h4>

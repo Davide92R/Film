@@ -12,6 +12,7 @@ class film extends Model
         'title',
         'author',
         'year',
-        'description'
+        'description',
+        'img',
     ];
 }

@@ -32,6 +32,7 @@ class FilmController extends Controller
                 'author'=> $request->input('author'),
                 'year'=> $request->input('year'),
                 'description'=> $request->input('description'),
+                'img'=>$request->file('img')->store('public/img'),
             ]
         );
         // dd($film);
