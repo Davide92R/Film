@@ -9,6 +9,26 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
           <a class="nav-link" href="{{route('createFilm')}}">Carica i film visti</a>
           <a class="nav-link" href="{{route('indexFilm')}}">Film</a>
+          @guest
+            
+          <a class="nav-link" href="{{route('login')}}">Accedi</a>
+          <a class="nav-link" href="{{route('register')}}">Registrati</a>
+
+          @else
+
+          <a class="nav-link" href="">Benvenuto: {{Auth::user()->name}}</a>
+          {{-- Logout --}}
+          <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.    getElementById('logout-form').submit();">
+            Logout
+          </a>
+        
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+          </form>
+        
+          {{-- Logout end --}}
+          @endguest
+
         </div>
       </div>
     </div>
