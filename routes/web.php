@@ -24,3 +24,12 @@ Route::get('/film/index', [FilmController::class, 'indexFilm'])->name('indexFilm
 
 // Rotta parametrica per il film
 Route::get('/film/{film}', [FilmController::class,'detFilm'])->name('detFilm');
+
+// Rotta get per la modifica della risorsa
+Route::get('/film/edit/{film}', [FilmController::class, 'editFilm'])->name('editFilm');
+// Rotta put per la modifica del film PARAMETRICA
+Route::put('/film/update/{film}', [FilmController::class, 'upadateFilm'])->name('updateFilm');
+// Rotta delete per eliminare la risorsa
+Route::delete('/film/delete/{film}', [FilmController::class, 'deleteFilm'])->name('deleteFilm');
+// Rotta per il profilo utente
+Route::get('/user', [FilmController::class, 'user'])->name('user');

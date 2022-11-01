@@ -25,7 +25,7 @@ class FilmRequest extends FormRequest
     {
         return [
             'title'=> 'required',
-            'author'=> 'required',
+            // 'author'=> 'required',
             'year'=> 'required | integer |min_digits:4',
             'description'=> 'required',
             'img'=>'required| image'

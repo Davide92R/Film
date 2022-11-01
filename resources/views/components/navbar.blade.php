@@ -7,16 +7,17 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="{{route('createFilm')}}">Carica i film visti</a>
           <a class="nav-link" href="{{route('indexFilm')}}">Film</a>
           @guest
-            
+          
           <a class="nav-link" href="{{route('login')}}">Accedi</a>
           <a class="nav-link" href="{{route('register')}}">Registrati</a>
-
+          
           @else
-
+          
           <a class="nav-link" href="">Benvenuto: {{Auth::user()->name}}</a>
+          <a class="nav-link" href="{{route('user')}}">Profilo</a>
+          <a class="nav-link" href="{{route('createFilm')}}">Carica i film visti</a>
           {{-- Logout --}}
           <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.    getElementById('logout-form').submit();">
             Logout
