@@ -13,7 +13,8 @@
                             <p class="card-title">Descrizione: {{$film->description}}</p>
 
                             @auth
-                                @if (Auth::user()->name === $film->author)
+
+                                @if (Auth::id()->name == $film->user->id)
                                     <a href="{{route('editFilm', compact('film'))}}" class="btn btn-warning">Edit</a>
                                     {{-- Bottone per eliminazione del film --}}
                                     <form action="{{route('deleteFilm', compact('film'))}}" method="POST">

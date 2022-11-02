@@ -31,7 +31,9 @@ class FilmController extends Controller
 
         // creazione dell'oggetto nel DB col
         // MASS ASSIGNAMENT
-        $film = film::create(
+        $user=Auth::user();
+
+            $user->films()->create(
             [
                 'title'=> $request->input('title'),
                 'author'=> Auth::user()->name,
