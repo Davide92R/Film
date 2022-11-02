@@ -11,7 +11,8 @@ class film extends Model
     use HasFactory;
     protected $fillable=[
         'title',
-        'author',
+        //non più necessario
+        // 'author',
         'year',
         'description',
         'img',

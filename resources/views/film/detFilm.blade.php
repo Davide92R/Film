@@ -14,7 +14,7 @@
 
                             @auth
 
-                                @if (Auth::id()->name == $film->user->id)
+                                @if (Auth::id() == $film->user->id)
                                     <a href="{{route('editFilm', compact('film'))}}" class="btn btn-warning">Edit</a>
                                     {{-- Bottone per eliminazione del film --}}
                                     <form action="{{route('deleteFilm', compact('film'))}}" method="POST">

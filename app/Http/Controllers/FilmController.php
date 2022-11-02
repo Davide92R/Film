@@ -36,7 +36,7 @@ class FilmController extends Controller
             $user->films()->create(
             [
                 'title'=> $request->input('title'),
-                'author'=> Auth::user()->name,
+                //'author'=> Auth::user()->name,
                 'year'=> $request->input('year'),
                 'description'=> $request->input('description'),
                 'img'=>$request->file('img')->store('public/img'),
@@ -82,7 +82,8 @@ class FilmController extends Controller
     }
 
     public function user(){
-        $films=film::where('author', Auth::user()->name)->get();
+        //$films=film::where('author', Auth::user()->name)->get();
+        $films = Auth::user()->films()->get();
         return view('user', compact('films'));
     }
 }
