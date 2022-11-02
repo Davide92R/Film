@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\film;
+use App\Models\Profile;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,7 +44,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //Funzione di relazione 1-N tra utente e fumetti
     public function films(){
         return $this->hasMany(film::class);
+    }
+
+    //funzione di relazione 1-1 tra utente e suo profilo.
+    public function profile(){
+        return $this->hasOne(Profile::class);
     }
 }

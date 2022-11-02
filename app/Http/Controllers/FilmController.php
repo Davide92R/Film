@@ -81,9 +81,5 @@ class FilmController extends Controller
         return redirect(route('indexFilm'));
     }
 
-    public function user(){
-        //$films=film::where('author', Auth::user()->name)->get();
-        $films = Auth::user()->films()->get();
-        return view('user', compact('films'));
-    }
+
 }

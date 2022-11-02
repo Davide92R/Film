@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
 
 /*
@@ -32,4 +33,6 @@ Route::put('/film/update/{film}', [FilmController::class, 'upadateFilm'])->name(
 // Rotta delete per eliminare la risorsa
 Route::delete('/film/delete/{film}', [FilmController::class, 'deleteFilm'])->name('deleteFilm');
 // Rotta per il profilo utente
-Route::get('/user', [FilmController::class, 'user'])->name('user');
+Route::get('/user', [ProfileController::class, 'user'])->name('user');
+
+Route::post('/user/profile-post', [ProfileController::class,'storeProfile'])->name('storeProfile');
